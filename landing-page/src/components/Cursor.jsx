@@ -42,7 +42,7 @@ export default function Cursor() {
       />
       <div
         ref={ring}
-        className="fixed w-8 h-8 rounded-full border border-accent/40 pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-[width,height] duration-300"
+        className="fixed w-8 h-8 rounded-full border border-cyan-900 pointer-events-none z-[9998] -translate-x-1/2 -translate-y-1/2 transition-[width,height] duration-300"
       />
     </>
   );

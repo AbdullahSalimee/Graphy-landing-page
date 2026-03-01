@@ -9,7 +9,7 @@ import Typewriter from "./Typewriter";
 
 // ─── FLOATING CHART COMPONENTS ───────────────────────────────────────────────
 
-function GlowAreaChart({ className }) {
+export function GlowAreaChart({ className }) {
   return (
     <div
       className={`floating-card ${className}`}
@@ -123,7 +123,7 @@ function GlowAreaChart({ className }) {
   );
 }
 
-function Bars3DChart({ className }) {
+export function Bars3DChart({ className }) {
   const bars = [
     { h: 52, front: ["#5B8FFF", "#3D6EEE"], side: "#2A55CC", top: "#9BBFFF" },
     { h: 78, front: ["#7AAAFF", "#4F7FFF"], side: "#3A65DD", top: "#B0CFFF" },
@@ -227,7 +227,7 @@ function Bars3DChart({ className }) {
   );
 }
 
-function RadialChart({ className }) {
+export function RadialChart({ className }) {
   const slices = [
     { r: 38, color: "#4F7FFF" },
     { r: 30, color: "#A78BFA" },
@@ -319,7 +319,7 @@ function RadialChart({ className }) {
   );
 }
 
-function RichDonut({ className }) {
+export function RichDonut({ className }) {
   const segs = [
     [0, 130, ["#4F7FFF", "#2A55DD"], "Series A"],
     [130, 90, ["#A78BFA", "#7C55EE"], "Series B"],
@@ -411,7 +411,7 @@ function RichDonut({ className }) {
   );
 }
 
-function BeautifulHeatmap({ className }) {
+export function BeautifulHeatmap({ className }) {
   const data = [
     [0.1, 0.4, 0.8, 0.6, 0.3, 0.9, 0.5],
     [0.7, 0.2, 0.5, 1.0, 0.4, 0.6, 0.2],
@@ -490,7 +490,7 @@ function BeautifulHeatmap({ className }) {
   );
 }
 
-function SparklineChart({ className }) {
+export function SparklineChart({ className }) {
   return (
     <div
       className={`floating-card ${className}`}
