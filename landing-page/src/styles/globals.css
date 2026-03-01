@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@300;400;500;600;700&display=swap');
+
+
+@import "tailwindcss";
+
+
+html, body, * {
+  font-family: 'Chakra Petch', sans-serif !important;
+}
+
+
+/* ─── FLOATING CHART CARDS ──────────────────────────────────────────────────── */
+
+.floating-card {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.227);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 18px;
+  box-shadow:
+    0 4px 24px rgba(60, 90, 200, 0.10),
+    0 1.5px 6px rgba(60, 90, 200, 0.07),
+    inset 0 1px 0 rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── FLOAT ANIMATIONS ───────────────────────────────────────────────────────── */
+
+@keyframes floatA {
+  0%, 100% { transform: translateY(0px) rotate(var(--r, 0deg)); }
+  50%       { transform: translateY(-12px) rotate(var(--r, 0deg)); }
+}
+
+@keyframes floatB {
+  0%, 100% { transform: translateY(0px) rotate(var(--r, 0deg)); }
+  50%       { transform: translateY(-8px) rotate(var(--r, 0deg)); }
+}
+
+@keyframes floatC {
+  0%, 100% { transform: translateY(0px) rotate(var(--r, 0deg)); }
+  50%       { transform: translateY(-15px) rotate(var(--r, 0deg)); }
+}
+
+/* ─── CHART POSITIONS ────────────────────────────────────────────────────────── */
+/* Tweak top/left/right/bottom values to fit your layout */
+
+.chart-1 {
+  --r: -10deg;
+  top: 10%;
+  left: 3%;
+  animation: floatA 4.5s ease-in-out infinite;
+}
+
+.chart-2 {
+  --r: -23deg;
+  top: 28%;
+  left: 9%;
+  animation: floatB 5.2s ease-in-out infinite 0.5s;
+}
+
+.chart-3 {
+  --r: -deg;
+  bottom: 10%;
+  left: 3%;
+  animation: floatC 4.8s ease-in-out infinite 1s;
+}
+
+.chart-4 {
+  --r: 10deg;
+  top: 28%;
+  right: 13%;
+  animation: floatB 5s ease-in-out infinite 0.3s;
+}
+
+.chart-5 {
+  --r: 13deg;
+  top: 10%;
+  right: 5%;
+  animation: floatA 4.3s ease-in-out infinite 0.8s;
+}
+
+.chart-6 {
+  --r: 4deg;
+  bottom: 12%;
+  right: 6%;
+  animation: floatC 5.5s ease-in-out infinite 0.2s;
+}
+
+/* ─── STATS ROW ──────────────────────────────────────────────────────────────── */
+
+.stats-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 3rem;
+  width: 100%;
+  max-width: 680px;
+  border: 1px solid rgba(var(--accent-rgb), 0.1);
+  border-radius: 1rem;
+  background: rgba(var(--panel-rgb), 0.6);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  overflow: hidden;
+}
+
+.stats-item {
+  flex: 1;
+  flex-basis: 120px;
+  padding: 1.5rem 1rem;
+  text-align: center;
+  transition: background 0.2s ease;
+}
+
+.stats-item:hover {
+  background: rgba(var(--accent-rgb), 0.08);
+}
+
+.stats-item--bordered {
+  border-right: 1px solid rgba(var(--accent-rgb), 0.1);
+}
+
+/* ─── NUMBER ─────────────────────────────────────────────────────────────────── */
+
+.stats-number {
+  font-family: var(--font-playfair), serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  line-height: 1;
+  margin-bottom: 0.375rem;
+  color: var(--accent);
+
+  /* Count-up flash: brief brightness pop as digits change */
+  animation: stats-pop 0.15s ease-out;
+}
+
+@keyframes stats-pop {
+  0%   { opacity: 0.4; transform: translateY(4px); }
+  100% { opacity: 1;   transform: translateY(0); }
+}
+
+/* ─── LABEL ──────────────────────────────────────────────────────────────────── */
+
+.stats-label {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.62rem;
+  color: rgb(100 116 139); /* slate-500 */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+
+  /* Fade in slightly after the number */
+  animation: stats-label-in 0.4s ease-out both;
+  animation-delay: 0.2s;
+}
+
+@keyframes stats-label-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ─── ENTRANCE (whole row slides up) ────────────────────────────────────────── */
+
+.stats-row {
+  animation: stats-row-in 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+  animation-delay: 0.5s;
+}
+
+@keyframes stats-row-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
