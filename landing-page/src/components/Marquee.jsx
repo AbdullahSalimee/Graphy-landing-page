@@ -1261,11 +1261,10 @@ export default function Marquee() {
 
   return (
     <div
-      className="relative z-10 overflow-hidden py-8 border-y "
+      className="relative z-10 overflow-hidden py-8  "
       style={{
         borderColor: "rgba(255,255,255,0.06)",
-        background:
-          "black",
+        background: "",
       }}
       onMouseEnter={pause}
       onMouseLeave={resume}
@@ -1274,12 +1273,14 @@ export default function Marquee() {
       <div
         className="pointer-events-none absolute inset-y-0 left-0 w-24 z-10"
         style={{
-          background: "linear-gradient(to right, #000000, transparent)",
+          background: "linear-gradient(to right, #3F88C5, transparent)",
         }}
       />
       <div
         className="pointer-events-none absolute inset-y-0 right-0 w-24 z-10"
-        style={{ background: "linear-gradient(to left, #080f1a, transparent)" }}
+        style={{
+          background: "linear-gradient(to left, #3F88C5, transparent)",
+        }}
       />
 
       <div ref={trackRef} className="flex gap-4 w-max will-change-transform">
@@ -1292,8 +1293,7 @@ export default function Marquee() {
               style={{
                 width: 220,
                 height: 158,
-                background:
-                  "white",
+                background: "white",
                 border: "1px solid rgba(255,255,255,0.07)",
                 borderRadius: 14,
                 padding: "10px 10px 8px",
